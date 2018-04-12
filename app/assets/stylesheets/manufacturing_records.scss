@@ -1,0 +1,34 @@
+.previous_procedure td, .next_procedure td {
+	color: #999;
+}
+.current_procedure td {
+	font-weight: bold;
+}
+
+.bg-danger, .bg-warning {
+	.text-muted {
+		color: #ccc !important;
+	}
+}
+
+.thead-fixed {
+	thead {
+		background-color: #f4f3ef;
+		z-index: 3;
+	}
+}
+
+td.manu-progress {
+	font-size: 0px;
+}
+
+div.step {
+	width: 20px;
+  height: 20px;
+  background: white;
+  border: 1px solid #ddd;
+  display: inline-block;
+  &.finished {
+  	background-color: #FFA534;
+  }
+}
