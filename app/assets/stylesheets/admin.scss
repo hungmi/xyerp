@@ -1,7 +1,13 @@
 @import "bootstrap";
+@import "bootstrap.min";
+@import "admin/sessions";
+body, html {
+	font-family: 'Noto Sans TC', sans-serif;
+}
+
 @import "override_bootstrap";
-@import "workpiece";
-@import "manufacturing_record";
+@import "workpieces";
+@import "manufacturing_records";
 
 @media only screen and (min-width: 900px) {
 	#sidebar {
