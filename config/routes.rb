@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-	get 'admin', to: redirect('/admin/workpieces')
+	get 'admin', to: redirect('/admin/customers')
 	namespace :admin do
+		resources :customers
 		resources :customers do
 			resources :workpieces
 		end

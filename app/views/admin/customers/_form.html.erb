@@ -1,0 +1,48 @@
+<%= form_with model: [:admin, customer], local: true, class: "mb-5" do |f| %>
+  <div class="row">
+    <div class="offset-lg-3 col-lg-6">
+      <div class="form-group <%= customer.errors[:name].present? ? 'has-danger' : '' %>">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control #{customer.errors[:name].present? ? 'is-invalid' : ''}" %>
+        <% if customer.errors[:name].present? %>
+    	    <div class="invalid-feedback">
+    	      <%= customer.errors[:name].join(", ") %>
+    	    </div>
+        <% end %>
+      </div>
+    
+      <div class="form-group <%= customer.errors[:address].present? ? 'has-danger' : '' %>">
+        <%= f.label :address %>
+        <%= f.text_field :address, class: "form-control #{customer.errors[:address].present? ? 'is-invalid' : ''}" %>
+        <% if customer.errors[:address].present? %>
+    	    <div class="invalid-feedback">
+    	      <%= customer.errors[:address].join(", ") %>
+    	    </div>
+        <% end %>
+      </div>
+    
+      <div class="form-group <%= customer.errors[:payment_term].present? ? 'has-danger' : '' %>">
+        <%= f.label :payment_term %>
+        <%= f.text_field :payment_term, class: "form-control #{customer.errors[:payment_term].present? ? 'is-invalid' : ''}" %>
+        <% if customer.errors[:payment_term].present? %>
+    	    <div class="invalid-feedback">
+    	      <%= customer.errors[:payment_term].join(", ") %>
+    	    </div>
+        <% end %>
+      </div>
+    
+      <div class="form-group <%= customer.errors[:note].present? ? 'has-danger' : '' %>">
+        <%= f.label :note %>
+        <%= f.text_field :note, class: "form-control #{customer.errors[:note].present? ? 'is-invalid' : ''}" %>
+        <% if customer.errors[:note].present? %>
+    	    <div class="invalid-feedback">
+    	      <%= customer.errors[:note].join(", ") %>
+    	    </div>
+        <% end %>
+      </div>
+    
+      <%= link_to I18n.t('text.cancel'), admin_customers_path, class: "btn btn-link text-danger" %>
+      <%= f.submit class: "btn btn-primary float-right" %>
+    </div>
+  </div>
+<% end %>
